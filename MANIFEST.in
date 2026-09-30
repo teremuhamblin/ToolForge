@@ -1,0 +1,12 @@
+include LICENSE
+include README.rst
+
+recursive-include src/scripts *.ts
+recursive-include src/tools *.ts
+recursive-include src/tools *.vue
+recursive-include src/tools *.spec.ts
+recursive-include src/tools *.test.ts
+
+global-exclude *.log
+global-exclude *.tmp
+global-exclude *.tsbuildinfo
