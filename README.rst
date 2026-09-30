@@ -35,6 +35,21 @@ Exemple :
 Structure générée
 =================
 
+Manifests
+=========
+
+ToolForge inclut deux fichiers de manifeste assurant un packaging propre et contrôlé :
+
+- ``MANIFEST.in`` : définit précisément les fichiers inclus dans le paquet  
+  (scripts, tools, sources TypeScript, composants Vue, tests, licence, documentation).
+
+- ``MANIFEST.rst`` : documentation du contenu du paquet, décrivant les répertoires,
+  les fichiers générés automatiquement et les exclusions (logs, fichiers temporaires,
+  artefacts de compilation).
+
+Ces deux fichiers garantissent une distribution stable, minimale et adaptée aux
+environnements techniques modernes.
+
 Dossier : ``src/tools/<toolName>/``
 
 - ``<toolName>.vue``
