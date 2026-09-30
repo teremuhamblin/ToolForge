@@ -1,0 +1,17 @@
+{
+  "name": "toolforge",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "create-tool": "ts-node src/scripts/create-tool.ts"
+  },
+  "dependencies": {
+    "@vicons/tabler": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "vitest": "^1.0.0",
+    "@playwright/test": "^1.40.0"
+  }
+}
