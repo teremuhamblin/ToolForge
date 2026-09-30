@@ -1,8 +1,9 @@
-# 🛡️ Projet GitHub :
+# 🛡️ Projet GitHub
+### Structure 
 ```text
 ToolForge/
 ├── LICENSE
-├── README.md
+├── README.rst
 ├── package.json
 ├── tsconfig.json
 ├── docs/
