@@ -1,10 +1,11 @@
 # ToolForge — STRUCTURE v1.1.0
 
-## Objectif
+### Objectif
 Structure opérationnelle du projet ToolForge, alignée sur le générateur d’outils
 (Vue, services, tests unitaires, tests E2E, index automatique).
 
-## Arborescence
+### Arborescence
+
 ```text
 toolforge/
 ├── src/
