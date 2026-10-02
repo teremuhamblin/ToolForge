@@ -1,0 +1,58 @@
+name: "Issue — ToolForge"
+description: "Créer un ticket technique, structurel ou opérationnel pour ToolForge."
+title: "[Issue] Description concise"
+labels: ["issue", "toolforge"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Objectif
+        Décrire clairement le problème, la tâche ou l'amélioration à apporter au projet ToolForge.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Détail précis du problème ou de la tâche."
+      placeholder: "Décrire le contexte, les fichiers concernés, les comportements observés."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Résultat attendu"
+      description: "Décrire le comportement ou l'état final souhaité."
+      placeholder: "Décrire l'objectif opérationnel."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Étapes"
+      description: "Lister les étapes nécessaires pour résoudre l'issue."
+      placeholder: "- Étape 1\n- Étape 2\n- Étape 3"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Checklist"
+      description: "Cocher les éléments pertinents."
+      options:
+        - label: "Impact sur la structure"
+        - label: "Impact sur la documentation"
+        - label: "Impact sur le générateur"
+        - label: "Impact sur les tests"
+        - label: "Impact sur la configuration"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Notes supplémentaires"
+      description: "Informations complémentaires utiles."
+      placeholder: "Ajouter des précisions si nécessaire."

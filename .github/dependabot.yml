@@ -1,0 +1,116 @@
+version: 2
+
+updates:
+  # ============================================================
+  # 1. GitHub Actions — Sécurité + CI
+  # ============================================================
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    groups:
+      actions-all:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 7
+
+  # ============================================================
+  # 2. npm — Dépendances du projet ToolForge
+  # ============================================================
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    versioning-strategy: "increase"
+    open-pull-requests-limit: 5
+    groups:
+      core-deps:
+        patterns:
+          - "typescript"
+          - "ts-node"
+      test-deps:
+        patterns:
+          - "vitest"
+          - "@playwright/test"
+      ui-deps:
+        patterns:
+          - "@vicons/*"
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "production"
+      - dependency-type: "development"
+    ignore:
+      - dependency-name: "rimraf"
+        versions:
+          - ">=6"
+    cooldown:
+      default-days: 7
+
+  # ============================================================
+  # 3. npm — Scripts internes (src/scripts)
+  # ============================================================
+  - package-ecosystem: "npm"
+    directory: "/src/scripts"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+    commit-message:
+      prefix: "scripts"
+      include: "scope"
+    open-pull-requests-limit: 3
+    groups:
+      scripts-all:
+        patterns:
+          - "*"
+    cooldown:
+      default-days: 7
+
+  # ============================================================
+  # 4. npm — Modules générés automatiquement (src/tools)
+  # ============================================================
+  - package-ecosystem: "npm"
+    directory: "/src/tools"
+    schedule:
+      interval: "weekly"
+      day: "thursday"
+    commit-message:
+      prefix: "tools"
+      include: "scope"
+    open-pull-requests-limit: 3
+    groups:
+      tools-all:
+        patterns:
+          - "*"
+    cooldown:
+      default-days: 7
+
+  # ============================================================
+  # 5. Sécurité — Audit automatique
+  # ============================================================
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "security"
+      include: "scope"
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "production"
+    groups:
+      security-critical:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 2
+    cooldown:
+      default-days: 1

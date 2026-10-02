@@ -1,0 +1,60 @@
+name: "Pull Request — ToolForge"
+description: "Soumettre une mise à jour technique, structurelle ou documentaire pour ToolForge."
+title: "[PR] Description concise"
+labels: ["pull-request", "toolforge"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Objectif
+        Décrire clairement les modifications apportées dans cette Pull Request.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: "Résumé"
+      description: "Décrire les changements principaux."
+      placeholder: "Expliquer les modifications apportées."
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: "Détails techniques"
+      description: "Lister les fichiers modifiés et les impacts."
+      placeholder: "- Fichier 1\n- Fichier 2\n- Fichier 3"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Checklist"
+      description: "Cocher les éléments réalisés."
+      options:
+        - label: "Documentation mise à jour"
+        - label: "Structure conforme"
+        - label: "Tests unitaires validés"
+        - label: "Tests E2E validés"
+        - label: "Types vérifiés"
+        - label: "Sécurité auditée"
+        - label: "Aucun fichier inutile ajouté"
+
+  - type: textarea
+    id: tests
+    attributes:
+      label: "Résultats des tests"
+      description: "Décrire les validations effectuées."
+      placeholder: "Vitest OK\nPlaywright OK\nTypes OK"
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Notes supplémentaires"
+      description: "Informations complémentaires utiles."
+      placeholder: "Ajouter des précisions si nécessaire."

@@ -1,17 +1,56 @@
 {
   "name": "toolforge",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "description": "Générateur tactique de modules Vue + TypeScript (services, tests, E2E, index).",
   "type": "module",
+
   "scripts": {
-    "create-tool": "ts-node src/scripts/create-tool.ts"
+    "create-tool": "ts-node src/scripts/create-tool.ts",
+
+    "build": "tsc --project tsconfig.json",
+    "clean": "rimraf dist tmp logs || true",
+
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+
+    "check:types": "tsc --noEmit",
+    "check:security": "npm audit --audit-level=high",
+    "check:all": "npm run check:types && npm run test && npm run test:e2e"
   },
+
   "dependencies": {
     "@vicons/tabler": "^1.0.0"
   },
+
   "devDependencies": {
     "typescript": "^5.0.0",
     "ts-node": "^10.9.1",
+
     "vitest": "^1.0.0",
-    "@playwright/test": "^1.40.0"
-  }
+    "@playwright/test": "^1.40.0",
+
+    "rimraf": "^5.0.0"
+  },
+
+  "keywords": [
+    "toolforge",
+    "generator",
+    "vue",
+    "typescript",
+    "automation",
+    "tools",
+    "military-tech",
+    "module-generator"
+  ],
+
+  "author": "Teremu (The MadDoG.tmdg)",
+  "license": "Blue Oak Model License 1.0.0",
+
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+
+  "private": true
 }

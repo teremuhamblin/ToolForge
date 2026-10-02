@@ -1,13 +1,14 @@
 ToolForge
 =========
 
-- Générateur minimaliste de modules
-- TypeScript pour projets techniques.
+🛠️ Générateur minimaliste de modules  
+⚙️ Basé sur TypeScript pour projets techniques  
+🎯 Conçu pour produire automatiquement des outils Vue + services + tests
 
 Badges
 ======
 
-ToolForge (Yellow Tactical)
+ToolForge — Yellow Tactical
 ---------------------------
 
 .. image:: https://img.shields.io/badge/Status-Active-FFFF00?style=for-the-badge
@@ -16,13 +17,19 @@ ToolForge (Yellow Tactical)
 .. image:: https://img.shields.io/badge/TypeScript-Ready-FFFF00?style=for-the-badge
 .. image:: https://img.shields.io/badge/Tools-Auto_Generator-FFFF00?style=for-the-badge
 
-Objectif
+Objectif 🎯
+===========
+
+Créer automatiquement un dossier d’outil complet :
+
+- 🧩 Composant Vue  
+- 🔧 Service interne  
+- 🧪 Tests unitaires  
+- 🚀 Tests E2E  
+- 📦 Index d’importation automatique
+
+Usage ⚙️
 ========
-
-Créer automatiquement un dossier d’outil complet *(Vue, service, tests, E2E, index)*.
-
-Usage
-=====
 
 Commande :
 
@@ -32,33 +39,37 @@ Exemple :
 
 ``npm run create-tool hash-generator``
 
-Structure générée
-=================
-
-Manifests
-=========
-
-ToolForge inclut deux fichiers de manifeste assurant un packaging propre et contrôlé :
-
-- ``MANIFEST.in`` : définit précisément les fichiers inclus dans le paquet  
-  (scripts, tools, sources TypeScript, composants Vue, tests, licence, documentation).
-
-- ``MANIFEST.rst`` : documentation du contenu du paquet, décrivant les répertoires,
-  les fichiers générés automatiquement et les exclusions (logs, fichiers temporaires,
-  artefacts de compilation).
-
-Ces deux fichiers garantissent une distribution stable, minimale et adaptée aux
-environnements techniques modernes.
+Structure générée 📁
+====================
 
 Dossier : ``src/tools/<toolName>/``
 
-- ``<toolName>.vue``
-- ``index.ts``
-- ``<toolName>.service.ts``
-- ``<toolName>.service.test.ts``
-- ``<toolName>.e2e.spec.ts``
+- ``<toolName>.vue`` — 🧩 composant Vue 3  
+- ``index.ts`` — 📦 export du module  
+- ``<toolName>.service.ts`` — 🔧 logique interne  
+- ``<toolName>.service.test.ts`` — 🧪 tests unitaires  
+- ``<toolName>.e2e.spec.ts`` — 🚀 tests end‑to‑end
 
-Licence
-=======
+Manifests 📦
+============
+
+ToolForge inclut deux fichiers de manifeste assurant un packaging propre et contrôlé :
+
+- ``MANIFEST.in``  
+  📌 Définit précisément les fichiers inclus dans le paquet :  
+  scripts, tools, sources TypeScript, composants Vue, tests, licence, documentation.
+
+- ``MANIFEST.rst``  
+  📘 Documente le contenu du paquet :  
+  répertoires, fichiers générés automatiquement, exclusions (logs, temporaires, artefacts de build).
+
+Ces deux fichiers garantissent :
+
+- 🔒 une distribution stable  
+- 🪶 un paquet minimal  
+- 🛡️ une compatibilité avec les environnements techniques modernes
+
+Licence 📜
+==========
 
 *Blue Oak Model License 1.0.0*
